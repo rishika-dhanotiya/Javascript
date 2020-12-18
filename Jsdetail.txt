@@ -1,0 +1,199 @@
+Q1) How can you create an object in JavaScript?
+sol :
+In JavaScript, almost "everything" is an object.
+* There are different ways to create new objects:
+1. Creating objects using object literal syntax
+const person = {
+  firstName: 'FName',
+  lastName: 'LName'
+};
+
+2. Creating objects using the ‘new’ keyword 
+Here are 2 ways you can use the ‘new’ keyword pattern —
+  a) Using the ‘new’ keyword with’ in-built Object constructor function
+  To create an object, use the new keyword with Object() constructor, like this:
+
+   const person = new Object();
+   Now, to add properties to this object, we have to do something like this:
+
+   person.firstName = 'testFirstName';
+   person.lastName = 'testLastName';
+
+   b) Using ‘new’ with user defined constructor function
+    function Person(fname, lname) {
+    this.firstName = fname;
+    this.lastName = lname;
+    }
+    Now, anytime you want a ‘Person’ object, just do this:
+
+    const personOne = new Person('testFirstNameOne', 'testLastNameOne');
+    const personTwo = new Person('testFirstNameTwo', 'testLastNameTwo');
+
+3. Using Object.create() to create new objects
+ The Object.create() method creates a new object, using an existing object as the prototype of the newly 
+ created object.
+ var a = Object.create(null);
+
+<------------------------------------------------------------------------------------------------------------>
+
+Q2) How can you create an Array in JavaScript?
+sol : JavaScript arrays are used to store multiple values in a single variable.
+# Using an array literal 
+Syntax:
+var array_name = [item1, item2, ...];      
+Example- 
+var color = ["red","green","yellow"];
+ 
+# Using the JavaScript Keyword new
+var color = new Array("red","green","yellow");
+
+<------------------------------------------------------------------------------------------------------------->
+
+Q3) How to create a cookie using JavaScript?
+sol : Cookies let you to store user information in web pages.
+JavaScript can create, read, and delete cookies with the document.cookie property.
+With JavaScript, a cookie can be created like this:
+
+document.cookie = "username=John Doe";
+
+<-------------------------------------------------------------------------------------------------------------->
+
+Q4) What is the difference between Local storage & Session storage with example?
+sol : LocalStorage
+localStorage is a way to store data on the client’s computer.
+It allows the saving of key/value pairs in a web browser and it stores data with no expiration date.
+localStorage can only be accessed via JavaScript, and HTML5. However, the user has the ability to clear
+the browser data/cache to erase all localStorage data.
+
+ Session storage  
+
+ * stores data only for a session, meaning that the data is stored until the browser (or tab) is closed
+ * data is never transferred to the server
+ * can only be read on client-side
+ * storage limit is about 5-10MB
+ * opening multiple tabs/windows with the same URL creates sessionStorage for each tab/window
+
+ <------------------------------------------------------------------------------------------------------------>
+
+ Q5) What will be the output of the code below?
+var Y = 1;
+if (function F(){}) //true
+{
+y += Typeof F;</span> //Typeof F is undefined y = y + undefined i.e. 
+}
+console.log(y);
+
+Output : 1undefined
+
+<-------------------------------------------------------------------------------------------------------------->
+
+Q6) What is the difference between Call & Apply with example?
+sol :
+call() Method: It calls the method, taking the owner object as argument.
+The keyword this refers to the ‘owner’ of the function or the object it belongs to.
+
+Syntax:
+  object.objectMethod.call( objectInstance, arguments )
+ 
+apply() Method: The apply() method is used to write methods, which can be used on different objects.
+It is different from the function call() because it takes arguments as an array.
+Syntax:
+  object.objectMethod.apply(objectInstance, arrayOfArguments)
+
+<-------------------------------------------------------------------------------------------------------------->
+
+Q7) How to empty an Array in JavaScript?
+sol : 4 Ways to Empty an Array in JavaScript
+ Suppose you have the following array and want to remove all of its elements:
+ let a = [1,2,3,4];
+ 1.  Assigning it to a new empty array -
+     This is the fastest way to empty an array:
+     a = [];
+
+2. Setting its length to zero -
+      The second way to empty an array is to set its length to zero:
+      a.length = 0;
+
+3. Using splice() method -
+     The third way to empty an array is to remove all of its elements using the splice() method as shown in the following example:
+     a.splice(0,a.length);
+
+4. Using pop() method -
+     The fourth way to empty an array is to remove each element of the array one by one using the while loop and pop() method:
+     while(a.length > 0) {
+     a.pop();
+    }
+
+<-------------------------------------------------------------------------------------------------------------->
+
+Q8) What will be the output of the following code?
+var Output = (function(x)
+{
+Delete X; //delete operator is used to delete a property from an object. here,x is not an object it's local variable. delete operator doesn't affect local variables.
+return X; //0
+}
+)(0);
+console.log(output); //0
+
+Output : 0
+
+<-------------------------------------------------------------------------------------------------------------->
+
+Q9) var X = { Foo : 1}; //x is an object which has the property foo
+var Output = (function() 
+{ 
+delete X.foo; //it will delete x with property foo
+return X.foo; //undefined
+} 
+)(); 
+console.log(output);
+
+Output : undefined
+
+<-------------------------------------------------------------------------------------------------------------->
+
+Q10) What will be the output of the following code?
+var Employee =
+{
+company: 'xyz'
+}
+var Emp1 = Object.create(employee); //emp1 object has company as its prototype property
+delete Emp1.company //delete operator doesn't delete prototype property.
+Console.log(emp1.company); //xyz
+
+Output : xyz
+
+<-------------------------------------------------------------------------------------------------------------->
+
+Q11) Name the types of function with reason?
+function display() 
+{ 
+document.writeln("Named Function"); 
+} 
+display(); 
+
+sol :
+Named — These type of functions contains name at the time of definition.
+
+<--------------------------------------------------------------------------------------------------------------->
+
+Q12) var display=function() 
+{ 
+document.writeln("Anonymous Function"); 
+} 
+display(); 
+
+sol :
+Anonymous - These type of functions doesn’t contain any name. They are declared dynamically at runtime.
+
+<------------------------------------------------------------------------------------------------------------------>
+
+Q13) If we want to return the character from a specific index which method is used, explain with example?
+
+sol: charAt() method is used.
+The charAt() method returns the character at the specified index in a string.
+Example :
+var name = "RISHIKA";
+var res = name.charAt(name.length-1); // it will return A i.e last letter
+
+<------------------------------------------------------------------------------------------------------------------->
